@@ -1,0 +1,48 @@
+<h2>Hello {{username}}</h2>
+<h4>You are logged in</h4>
+
+
+<h1>Statistic</h1>
+
+<h2><a href="/add/">Add record</a></h2>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Site Name</th>
+            <th>URL</th>
+            <th>Visited</th>
+            <th>Data Transferred(bytes)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in data %}
+            <tr>
+                <td>{{ i.site_name }}</td>
+                <td>{{ i.url }}</td>
+                <td>{{ i.page_views }}</td>
+                <td>{{ i.data_transferred }}</td>
+                <td>
+                    <a href="{{ i.route }}/">Visit via VPN Service</a>
+                    <a href="/delete/{{i.id}}">🗑️</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,14 @@
+<h1>Add record</h1>
+
+<form action="/add/" method="post">
+    {% csrf_token %}
+    <label for="">Site name</label>
+    <input type="text" name="site_name" id="site_name" placeholder="Create site_name">
+    <br>
+    
+    <label for="">URL</label>
+    <input type="text" name="url" id="url" placeholder="Create url">
+    <br>
+
+    <button type="submit">ADD</button>
+</form>

@@ -1,0 +1,11 @@
+<h3>Welcome</h3>
+
+{% if user.is_authenticated %}
+    <h2>Hello {{username}}</h2>
+    <h4>You are logged in</h4>
+    <button type="submit"><a href="/profile">Profile</a></button>
+{% endif %}
+
+<button type="submit"><a href="/signup">Signup</a></button>
+<button type="submit"><a href="/signin">Signin</a></button>
+<button type="submit"><a href="/signout">Signout</a></button> 
